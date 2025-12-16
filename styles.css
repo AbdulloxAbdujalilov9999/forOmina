@@ -1,0 +1,237 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: 'Lora', serif;
+  background-color: #fff0f5;
+  overflow-x: hidden;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.section-page {
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5em;
+  color: #d6336c;
+  margin-bottom: 30px;
+}
+
+.menu-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px; /* Changed from left to right */
+  z-index: 999;
+  font-size: 2em;
+  cursor: pointer;
+  color: #d6336c;
+}
+
+.sidebar {
+  box-shadow: 2px 0 ;
+  position: fixed;
+  top: 0;
+  right: -250px; /* changed from left: -250px */
+  width: 250px;
+  height: 100%;
+  background-color: #fff0f5;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1); /* flipped the shadow direction */
+  padding-top: 60px;
+  transition: right 0.3s ease; /* changed from left */
+  z-index: 998;
+  text-align: center;
+}
+
+.sidebar.active {
+  right: 0; /* changed from left: 0 */
+}
+
+
+.sidebar a {
+  display: block;
+  padding: 12px 20px;
+  color: #d6336c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar a:hover {
+  background-color: #f8d7da;
+}
+
+/* Section 1 */
+.heart-beat {
+  font-size: 4rem;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+.main-message {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  color: #d6336c;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.sub-message {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #555;
+  transition: opacity 0.5s ease;
+}
+
+.glow-heart {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: glow 3s infinite ease-in-out;
+  opacity: 0.7;
+}
+
+@keyframes glow {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.5); opacity: 1; }
+}
+
+/* Section 2 & Section 4 */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1100px;
+}
+
+.memory-card,
+.poem-card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: #333;
+}
+
+.memory-card:hover,
+.poem-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.memory-card h3,
+.poem-card h3 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #c2185b;
+}
+
+.memory-card p,
+.poem-card p {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/* Section 3 - Messages */
+.typewriter-container {
+  margin-bottom: 30px;
+}
+
+.typewriter-text {
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: 'Lora', serif;
+  color: #c2185b;
+  border-right: 3px solid #c2185b;
+  display: inline-block;
+  max-width: 90vw; /* Prevent overflow on small screens */
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 4s steps(40, end) infinite, blink 0.75s step-end infinite;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.message-bubbles {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+  margin-bottom: 40px;
+}
+
+.bubble {
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 70%;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.bubble.left {
+  background-color: #fde2e4;
+  align-self: flex-start;
+}
+
+.bubble.right {
+  background-color: #f9c5d1;
+  align-self: flex-end;
+}
+
+.love-letter {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  max-width: 600px;
+  line-height: 1.6;
+  font-size: 1em;
+  color: #333;
+}
+
+/* Floating hearts */
+.heart {
+  position: absolute;
+  animation: float 5s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0); opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .memory-card, .poem-card {
+    width: 90%;
+  }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I wanna say...</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lora&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="poems.css">
+</head>
+<body>
+    <h1>I am going to save here, the things we would like save...</h1>
+
+
+     <div class="poem-container">
+    <h1>Notes</h1>
+
+    <div class="poem" onclick="togglePoem(this)">
+      <div class="poem-title">16.12.2025</div>
+      <div class="poem-preview">Bu yerda bazi men kerakli deb bilgan narsalarimizni saqlashimiz mumkin <br> masalan planlarimizni</div>
+      <div class="poem-full">
+      Qachon Turkiyaga ketamizeee 😂 <br>
+      </div>
+    </div>
+
+    <a href="index.html" class="back-link">← Ortga qaytish</a>
+  </div>
+
+  <div class="poem-container">
+    <h1>Imtixonlardan o'tvoldiz</h1>
+
+    <div class="poem" onclick="togglePoem(this)">
+      <div class="poem-title">16.12.2025</div>
+      <div class="poem-preview">Bugun mana asosiy imtixonlardan o'tdiz.. <br>Tabriklationnssss</div>
+      <div class="poem-full">
+              Bu yutuqlarizni yuvish kerakda, Omina 😂 <br>
+              O'zi bitta imtixondan o'tganizi yuvish kere edi, undan keyinam 2tadan o'tdiz. davay bugun yuvamiz 😂
+      </div>
+    </div>
+     <a href="index.html" class="back-link">← Ortga qaytish</a>
+  </div>
+
+ 
+
+  <script>
+    function togglePoem(el) {
+      const full = el.querySelector(".poem-full");
+      full.style.display = full.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+/* poems.css */
+body {
+  font-family: 'Lora', serif;
+  background: linear-gradient(to right, #ffddee, #ffe6cc);
+  padding: 60px 20px;
+  color: #333;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+.poem-container {
+  max-width: 800px;
+  background: rgba(255,255,255,0.9);
+  margin: 30px auto; /* <-- space between containers */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  color: #c94f7c;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.poem {
+  margin-bottom: 20px;
+  cursor: pointer;
+  border: 1px solid #e3b5c1;
+  border-radius: 10px;
+  padding: 15px 20px;
+  background-color: #fff0f5;
+  transition: background-color 0.3s;
+}
+
+.poem:hover {
+  background-color: #fff2f6;
+}
+
+.poem-title {
+  font-weight: bold;
+  color: #c94f7c;
+  font-size: 1.2rem;
+}
+
+.poem-preview,
+.poem-full {
+  font-size: 1rem;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.poem-full {
+  display: none;
+  margin-top: 10px;
+}
+
+a.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #d1457b;
+  text-decoration: underline;
+}
